@@ -1,4 +1,4 @@
-    <header data-aos="fade-down" class="p-3 bg-dark mb-3">
+    <header class="p-3 bg-dark mb-3">
     <div class="container" style="height: 40px">
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
 

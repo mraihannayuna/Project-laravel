@@ -22,10 +22,12 @@ class TasksController extends Controller
             return redirect('logout');
         }
 
-        $tasks = tasks::get();
 
+        $tasks = tasks::orderBy('id', 'DESC')->paginate(5);
+        $i = ($tasks->currentPage() - 1) * $tasks->perPage() + 1;
         $data = [
-            'tasks' => $tasks
+            'tasks' => $tasks,
+            'i' => $i
         ];
 
         return view('task.index', $data);

@@ -5,8 +5,8 @@
 
 <div class="row">
     <div class="col-md-4 mx-auto">
-        <div class="card">
-  <h5 class="card-header text-center" style="font-family:fantasy; font-size: 25px;">Login</h5>
+        <div class="card"  data-aos="fade-up">
+  <h5 class="card-header text-center" style="font-family:fantasy; font-size: 25px;">Register</h5>
   <div class="card-body">
 
 <form method="POST" action="{{ url('register') }}">

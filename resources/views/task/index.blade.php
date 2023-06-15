@@ -13,13 +13,13 @@
 
 
 
-<h1 class="container text-center spectrum" data-aos="zoom-out-down" style="font-family:sans-serif">CloudSCH Tabel</h1>
-<div data-aos="zoom-out-down" data-aos-duration="500">
-        <a data-aos="fade-down" data-aos-duration="600" class="btn btn-success my-2" href="{{ url('Cloudsch/create') }}">+ New Column</a>
+<h1 class="container text-center spectrum" style="font-family:sans-serif">CloudSCH Tabel</h1>
+<div data-aos="fade-right" data-aos-duration="700">
+        <a class="btn btn-success my-2" href="{{ url('Cloudsch/create') }}">+ New Column</a>
 </div>
 
 
-<table data-aos="zoom-out-up" data-aos-duration="500" class="container table table-bordered">
+<table data-aos="fade-right" class="container table table-bordered">
   <thead>
     <tr>
         <th scope="col">Number</th>
@@ -31,19 +31,21 @@
   </thead>
 
   <tbody>
-    @php($number = 1)
      @foreach($tasks as $t)
     <tr>
-      <th scope="row">{{ $number }}</th>
+      {{-- <th scope="row">{{ $loop->iteration + (($t->currentPage() -1) * $t->perPage())  }}</th> --}}
+      <th scope="row">{{ $i++ }}</th>
       <td>{{ $t->nama }}</td>
       <td>{{ $t->kelas }}</td>
         <td class="d-flex justify-content-center"><a href="{{ url("Cloudsch/$t->id/edit") }}" class="btn btn-warning">Edit</a></td>
     </tr>
-    @php($number++)
     @endforeach
+
   </tbody>
 </table>
-
+<div class="d-flex justify-content-center">
+    {{ $tasks->links('pagination::bootstrap-4') }}
+    </div>
 </div>
 
 @endsection
